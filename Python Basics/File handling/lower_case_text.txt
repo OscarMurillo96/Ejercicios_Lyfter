@@ -1,0 +1,5 @@
+hola mundo
+esto es python
+oscar santos murillo
+entry-level software developer
+manual qa engineer at hcl technologies
