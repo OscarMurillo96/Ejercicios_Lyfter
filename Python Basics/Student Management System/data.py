@@ -1,8 +1,7 @@
-from actions import students
 import csv
 import os
 
-def export_to_csv(path):#Option #5 Export to CSV.
+def export_to_csv(path, students):#Option #5 Export to CSV.
     with open(path, 'w', encoding="utf-8", newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Name', 'Section', 'Spanish Grade', 'English Grade', 'Socials Grade', 'Science Grade'])
@@ -11,7 +10,7 @@ def export_to_csv(path):#Option #5 Export to CSV.
         print("Data exported successfully.")
 
 
-def import_from_csv(path):#Option #6 Import from CSV.
+def import_from_csv(path, students):#Option #6 Import from CSV.
     if not os.path.exists(path):
         print("No exported file found")
     else:

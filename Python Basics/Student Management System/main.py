@@ -4,24 +4,25 @@ from data import *
 
 
 if __name__ == "__main__":
+    students = []
     greeting()
     while True:
         selection = show_menu()
         if selection == 1:
-            register_student()
+            register_student(students)
         elif selection == 2:
-            see_all_students()
+            see_all_students(students)
         elif selection == 3:
-            top_three_students()
+            top_three_students(students)
         elif selection == 4:
-            see_general_average()
+            see_general_average(students)
         elif selection == 5:
-            export_to_csv("students.csv")
+            export_to_csv("students.csv", students)
         elif selection == 6:
-            import_from_csv("students.csv")
+            import_from_csv("students.csv", students)
         elif selection == 7:
-            see_unapproved_students()
+            see_unapproved_students(students)
         elif selection == 8:
-            delete_a_student()
+            delete_a_student(students)
         elif selection == 9:
             break

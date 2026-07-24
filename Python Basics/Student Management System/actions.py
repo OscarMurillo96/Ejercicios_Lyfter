@@ -1,7 +1,5 @@
 import re
 
-students = []
-
 
 def error_handling(custom_message, conversion):#Error handling
     while True:
@@ -20,7 +18,7 @@ def calculate_average(student):#Calculate average function
     return round(average, 2)
 
 
-def register_student():#Option #1: Register a new student.
+def register_student(students):#Option #1: Register a new student.
     new_student = {}
     while True:
         student_name = input("Enter the student's name: ")
@@ -34,7 +32,7 @@ def register_student():#Option #1: Register a new student.
             print("Section must follow the following format (number number letter eg: 01A)")
         else:
             break
-    if student_exists(student_name, section):
+    if student_exists(student_name, section, students):
         print("Student is already registered.")
         return
     spanish_grade = error_handling("Enter the Spanish grade: ", float)
@@ -51,7 +49,7 @@ def register_student():#Option #1: Register a new student.
     students.append(new_student)
 
 
-def see_all_students():#Option #2 See all students.
+def see_all_students(students):#Option #2 See all students.
     if not students:
         print("No students registered yet.")
     else:
@@ -59,7 +57,7 @@ def see_all_students():#Option #2 See all students.
             print(f"{student['name']}\n {student['section']} - Average: {calculate_average(student)}")
 
 
-def top_three_students():#Option #3 Top 3 students.
+def top_three_students(students):#Option #3 Top 3 students.
     if not students:
         print("No students registered yet.")
     
@@ -70,7 +68,7 @@ def top_three_students():#Option #3 Top 3 students.
             print(f"Name: {student['name']}\n Section: {student['section']}\n Average: {calculate_average(student)}")
 
 
-def see_general_average():#Option #4 See general average.
+def see_general_average(students):#Option #4 See general average.
     if not students:
         print("No students registered yet.")
     else:
@@ -78,7 +76,7 @@ def see_general_average():#Option #4 See general average.
         print(f"General average: {general_average}")
 
 
-def see_unapproved_students():#Option #7 See unapproved students.
+def see_unapproved_students(students):#Option #7 See unapproved students.
     if not students:
         print("No students registered yet.")
     else:
@@ -96,7 +94,7 @@ def see_unapproved_students():#Option #7 See unapproved students.
                     print(f"Subject: {subject}, Grade: {grade}")
 
 
-def delete_a_student(): #Option #8 Delete a student.
+def delete_a_student(students): #Option #8 Delete a student.
     if not students:
         print("No students registered yet.")
     else:
@@ -134,7 +132,7 @@ def is_valid_section(section):
     return True
 
 
-def student_exists(name, section):
+def student_exists(name, section, students):
     for student in students:
         if student['name'] == name and student['section'] == section:
             return True
