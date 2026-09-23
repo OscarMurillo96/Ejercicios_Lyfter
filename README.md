@@ -1,2 +1,2 @@
 # Ejercicios_Lyfter
-Repositorio creado por Oscar Santos Murillo, estudiante de Lyfter.
+Repo created by Oscar Santos Murillo, a Lyfter team's student.
